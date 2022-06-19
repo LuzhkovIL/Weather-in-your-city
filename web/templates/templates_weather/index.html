@@ -15,7 +15,29 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-    <h1>Погодное приложение</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-5 offset-1">
+                <h1>Погода вашем городе</h1>
+                <from action="">
+                    <label for="city">Город</label>
+                    <input type="text" id="city" class="flex-control" name="city"
+                    placeholder="Введите город">
+                    <input type="submit" name="send" value="Узнать" class="mt-2 btn-danger">
+                </from>
+
+            </div>
+            <div class="col-4 offset-1">
+                <h1>Информация</h1>
+                <div class="alert alert-light">
+                    <b>Город:</b> {{ info.city }}<br>
+                    <b>температура:</b> {{ info.temp }}<sup>o</sup><br>
+                    <img src="https://openweathermap.org/img/w/{{}}.png" alt="Фото" class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
