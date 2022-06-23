@@ -3,11 +3,12 @@ from django.shortcuts import render
 from .models import City
 from .forms import CityForm
 
+
 def index(request):
     appid = '47c36fb73fccd6ff5ea9cf020919466d'
     url = 'https://api.openweathermap.org/data/2.5/weather?lat={}&units=metric&appid=' + appid
 
-    if(request.method == 'POST'):
+    if request.method == 'POST':
         form = CityForm(request.POST)
         form.save()
 
