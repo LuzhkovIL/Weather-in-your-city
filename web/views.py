@@ -6,16 +6,14 @@ from .forms import CityForm
 
 def index(request):
     appid = '47c36fb73fccd6ff5ea9cf020919466d'
-    url = 'https://api.openweathermap.org/data/2.5/weather?lat={}&units=metric&appid=' + appid
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&Units Default=Metric&appid=' + appid
 
     form = CityForm()
     if request.method == 'POST':
         form = CityForm(request.POST)
-        if form.is_valid():
-            pass
-        form = CityForm(request.POST)
         form.save()
 
+    form = CityForm()
 
     cities = City.objects.all()
 
