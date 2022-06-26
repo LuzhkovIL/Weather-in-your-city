@@ -1,12 +1,13 @@
 from .models import City
-from django.forms import ModelForm, TextInput
+from django import forms
 
 
-class CityForm(ModelForm):
+class CityForm(forms.ModelForm):
     class Meta:
         madel = City
         fields = ['name']
-        widgets = {'name': TextInput(attrs={
+
+        widgets = {'name': forms.TextInput(attrs={
             'class': 'form-control',
             'name': 'city',
             'id': 'city',
